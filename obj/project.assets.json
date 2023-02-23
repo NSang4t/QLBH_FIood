@@ -8802,11 +8802,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\QLBH\\New folder\\ASM_PS18412 - Copy\\ASM_PS18412\\ASM_PS18412.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\QLBH\\New folder\\QLBH\\ASM_PS18412\\ASM_PS18412.csproj",
       "projectName": "ASM_PS18412",
-      "projectPath": "C:\\Users\\Admin\\Documents\\QLBH\\New folder\\ASM_PS18412 - Copy\\ASM_PS18412\\ASM_PS18412.csproj",
+      "projectPath": "C:\\Users\\Admin\\Documents\\QLBH\\New folder\\QLBH\\ASM_PS18412\\ASM_PS18412.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\QLBH\\New folder\\ASM_PS18412 - Copy\\ASM_PS18412\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\QLBH\\New folder\\QLBH\\ASM_PS18412\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

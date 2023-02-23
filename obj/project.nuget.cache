@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XkQfiVjUDlCu/Rg+tUmF4zuPatmynF5ehfRG/KjG558AJqi169J4A0/+8mjL5yRR3r2Z7fXPwMvgYWG6HRVmAg==",
+  "dgSpecHash": "IcdMfFzJd1ur8+30OhKy5o8qXmHd562N+12uiSJmEjaH3eQUU22/nZBFUQFob0PTdrL5/Jz18GSv1CGU2zutrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Documents\\QLBH\\New folder\\ASM_PS18412 - Copy\\ASM_PS18412\\ASM_PS18412.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\QLBH\\New folder\\QLBH\\ASM_PS18412\\ASM_PS18412.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
