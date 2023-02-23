@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ASM_PS18412.Models.Carts>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutSanPham.cshtml";
+}
+
+<h1>LỊCH SỬ MUA HÀNG</h1>
+
+<p>
+   
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                NGÀY MUA
+            </th>
+            <th>
+                TRẠNG THÁI
+            </th>
+            
+        
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+            <td>
+                @{
+                    @if (item.IsDelete==false)
+                    {
+                            <a>Đang Giao</a>
+                        }
+                        else
+                        {
+                            <a>Đã Giao</a>
+                        }
+                    }
+                    
+                    
+                @Html.DisplayFor(modelItem => item.IsDelete)
+            </td>
+           
+           
+            <td>
+             
+                <a style="width:160px"  class="btn btn-outline-warning">  <a asp-controller="Cart" asp-action="ChiTietLichSu" asp-route-id="@item.CardId">xem chi tiết</a> </a>
+              
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

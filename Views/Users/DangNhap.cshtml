@@ -1,0 +1,76 @@
+﻿<div>
+    @Html.Raw(TempData["alert"])
+	
+</div>
+
+@model asmC5.Models.User
+<link href="~/cssdangnhap/dn.css" rel="stylesheet">
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form asp-controller="Users" asp-action="KhachHangCreate"
+      method="post" enctype="multipart/form-data">>
+			<h1>Tạo Tài Khoản</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>hoặc sử dụng email của bạn để đăng ký</span>
+			<input type="text" asp-for="UserFullName" placeholder="Name" />
+			
+
+			<input type="email" asp-for="UserEmail" placeholder="Email" />
+			
+
+			<input type="tel" asp-for="UserPhone" placeholder="Phone" />
+			
+
+			<input type="text" asp-for="UserAddress" placeholder="Address" />
+			
+
+			<input type="password" asp-for="UserPassWord" placeholder="Password" />
+			
+			<button type="submit">Đăng Ký</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form asp-controller="Users" asp-action="DangNhap"
+      method="post" enctype="multipart/form-data">
+			<h1>Đăng Nhập</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>hoặc sử dụng tài khoản của bạn</span>
+			<input asp-for="UserEmail" type="email"  placeholder="Email" />
+			
+			<input asp-for="UserPassWord" type="password" value="abc123"  placeholder="Password" />
+			
+			@*<a href="#">Quên mật khẩu?</a>*@
+			<button type="submit">Đăng Nhâp</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Chào mừng trở lại!</h1>
+				<p>
+Để giữ kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
+				<button class="ghost" id="signIn">Đăng Nhập</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Chào bạn!</h1>
+				<p>
+Nhập thông tin cá nhân của bạn và bắt đầu hành trình với chúng tôi</p>
+				<button class="ghost" id="signUp">Đăng Ký</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+  <script src="~/jsdangnhap/Jsdn.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  @section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

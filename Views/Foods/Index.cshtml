@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ASM_PS18412.Models.Foods>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    Layout = "_Layout";
+}
+ <p>@ViewBag.userid</p>
+<h1>DANH SÁCH MÓN ĂN</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+             TÊN MÓN
+            </th>
+            <th>
+               GIÁ BÁN
+            </th>
+            <th>
+               HÌNH ẢNH
+            </th>
+            <th>
+               MÔ TẢ
+            </th>
+            <th>
+                NGÀY TẠO
+            </th>
+            <th>
+                NGÀY SỬA
+            </th>
+            <th>
+             MÃ NGƯỜI TẠO
+            </th>
+            <th>
+               THUẾ VAT
+            </th>
+            <th>
+                ISDELETE
+            </th>
+            <th>
+               LOẠI MÓN
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodPrice)
+            </td>
+            <td>
+                <img src="~/TaiLieu/@item.FoodImage" width="50px" height="50px" />
+                @Html.DisplayFor(modelItem => item.FoodImage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FoodType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifyDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifyBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDelete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryModels.CategorName)
+            </td>
+            <td>
+              <button style="width:80px" type="button" class="btn btn-outline-info"> <a asp-action="Edit" asp-route-id="@item.FoodID">Edit</a></button>
+                <button style="width:80px"  type="button" class="btn btn-outline-warning">  <a asp-action="Details" asp-route-id="@item.FoodID">Details</a> </button>
+                <button style="width:80px"  type="button" class="btn btn-outline-danger"><a asp-action="Delete" asp-route-id="@item.FoodID">Delete</a></button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

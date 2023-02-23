@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ASM_PS18412.Models.CategoryModels>
+
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    Layout = "_Layout";
+}
+<h1>DANH SÁCH LOẠI MÓN ĂN</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               TÊN LOẠI MÓN ĂN
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategorName)
+            </td>
+            <td>
+                <button style="width:80px" type="button" class="btn btn-outline-info"> <a asp-action="Edit" asp-route-id="@item.CategoryId">Edit</a></button>
+                <button style="width:80px"  type="button" class="btn btn-outline-warning">  <a asp-action="Details" asp-route-id="@item.CategoryId">Details</a> </button>
+            @*    <button style="width:80px"  type="button" class="btn btn-outline-danger"><a asp-action="Delete" asp-route-id="@item.CategoryId">Delete</a></button>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

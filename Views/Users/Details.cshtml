@@ -1,0 +1,96 @@
+﻿@model  ASM_PS18412.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+@{
+    Layout = "_Layout";
+}
+
+<h1>CHI TIẾT USER</h1>
+
+<div>
+    
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+           HỌ TÊN
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserFullName)
+        </dd>
+        <dt class = "col-sm-2">
+            EMAIL
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+        <dt class = "col-sm-2" hidden>
+            MẬT KHẨU
+        </dt>
+        <dd class = "col-sm-10"hidden>
+            @Html.DisplayFor(model => model.UserPassWord)
+        </dd>
+        <dt class = "col-sm-2">
+            GIỚI TÍNH
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserGender)
+        </dd>
+        <dt class = "col-sm-2">
+            NGÀY SINH
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserBirtday)
+        </dd>
+        <dt class = "col-sm-2">
+            ĐIỆN THOẠI
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserPhone)
+        </dd>
+        <dt class = "col-sm-2">
+            ĐỊA CHỈ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserAddress)
+        </dd>
+        <dt class = "col-sm-2" hidden>
+            @Html.DisplayNameFor(model => model.UserToken)
+        </dt>
+        <dd class = "col-sm-10" hidden>
+            @Html.DisplayFor(model => model.UserToken)
+        </dd>
+        <dt class = "col-sm-2" hidden>
+            @Html.DisplayNameFor(model => model.UserTokenGG)
+        </dt>
+        <dd class = "col-sm-10" hidden> 
+            @Html.DisplayFor(model => model.UserTokenGG)
+        </dd>
+        <dt class = "col-sm-2" hidden>
+            @Html.DisplayNameFor(model => model.IsDelete)
+        </dt>
+        <dd class = "col-sm-10" hidden>
+            @Html.DisplayFor(model => model.IsDelete)
+        </dd>
+        <dt class = "col-sm-2" >
+           QUYỀN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Roles.RoleName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.UserId">Edit</a> |
+    @{
+        if (Model.RoleID == 1)
+    {
+            <a asp-action="GetUsers">Back to List</a>
+        }
+        else
+        {
+            <a asp-action="GetCus">Back to List</a>
+            
+        }
+    }
+</div>

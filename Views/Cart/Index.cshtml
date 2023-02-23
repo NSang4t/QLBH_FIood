@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ASM_PS18412.Models.Carts>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>DANH SÁCH GIỎ HÀNG</h1>
+
+<p>
+   
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                HỌ TÊN
+            </th>
+            <th>
+                EMAIL
+            </th>
+            <th>
+                ĐIỆN THOẠI
+            </th>
+            <th>
+                ĐỊA CHỈ
+            </th>
+            <th>
+                GIÁ CHƯA VAT
+            </th>
+            <th>
+                TIỀN VAT
+            </th>
+            <th>
+                TỔNG TIỀN
+            </th>
+            
+            <th>
+                NGÀY MUA
+            </th>
+            <th>
+                TRẠNG THÁI
+            </th>
+            
+        
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UseAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.VAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CardTocal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentDate)
+            </td>
+            <td>
+                @{
+                    @if (item.IsDelete==false)
+                    {
+                            <a>Đang Giao</a>
+                        }
+                        else
+                        {
+                            <a>Đã Giao</a>
+                        }
+                    }
+                    
+                    
+                @Html.DisplayFor(modelItem => item.IsDelete)
+            </td>
+           
+           
+            <td>
+               <button style="width:80px" type="button" class="btn btn-outline-info"> <a asp-action="Edit" asp-route-id="@item.CardId">Edit</a></button>
+                <button style="width:80px"  type="button" class="btn btn-outline-warning">  <a asp-controller="Cart" asp-action="Chitietgiohang" asp-route-id="@item.CardId">Details</a> </button>
+                @*<button style="width:80px"  type="button" class="btn btn-outline-danger"><a asp-action="Delete" asp-route-id="@item.CardId">Delete</a></button>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
